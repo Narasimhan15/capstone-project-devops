@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define variables
-IMAGE_NAME="my-react-app"
+IMAGE_NAME="capstone"
 DOCKERFILE="Dockerfile"
 BUILD_CONTEXT="."
 
