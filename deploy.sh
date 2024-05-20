@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Define variables
-IMAGE_NAME="capstoneproject"
+
+REPO_NAME="prod"
+IMAGE_NAME="capstone"
 DOCKER_HUB_USERNAME="lux1508"
 DOCKER_HUB_PASSWORD="dckr_pat_DEP3Dm-yovV5ksrHLx3eC5Ffd4Q"
 
@@ -17,11 +19,11 @@ echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-
 
 # Tag the local Docker image with the Docker Hub repository name
 echo "Tagging local Docker image..."
-docker tag $IMAGE_NAME $DOCKER_HUB_USERNAME/$IMAGE_NAME
+docker tag $IMAGE_NAME $DOCKER_HUB_USERNAME/$REPO_NAME
 
 # Push the tagged image to Docker Hub
 echo "Pushing Docker image to Docker Hub..."
-docker push $DOCKER_HUB_USERNAME/$IMAGE_NAME
+docker push $DOCKER_HUB_USERNAME/$REPO_NAME
 
 # Check if the push was successful
 if [ $? -eq 0 ]; then
